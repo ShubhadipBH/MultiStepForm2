@@ -144,11 +144,19 @@ if(!inputState.fname && !inputState.state){
  
 
 
-  dispatch(setTestSliceData(inputState))
+  // dispatch(setTestSliceData(inputState))
 
   setisReadyToDisplay("")
   setBtnDisable(false)
 
+}
+
+
+let finalSubmit=()=>{
+
+  dispatch(setTestSliceData(inputState))
+  // console.log(selector);
+  alert("Data Saved. Thank you !" + inputState.fname)
 }
 
 let reset=()=>{
@@ -400,7 +408,7 @@ Go Back To Home
 <Button className="BtnHome" variant="outline-dark" type="click" onClick={()=>{history.push('/')}} style={{ width:"70px" }}>
  Home
 </Button> 
-<Button variant="outline-success" onClick={()=>alert("Data Saved"+ selector.fname)}> Submit</Button>
+<Button variant="outline-success" onClick={()=>finalSubmit()}> Submit</Button>
 
   <p>   <Button variant="outline-danger"  onClick={()=>reset()}  style={{marginLeft:"20px" ,width:"80px" }}> Reset</Button></p> 
 </span>
