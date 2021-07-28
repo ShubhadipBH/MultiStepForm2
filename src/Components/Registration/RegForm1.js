@@ -123,7 +123,7 @@ let handleChange_2=(event)=>{
 
  
 let [isReadyToDisplay,setisReadyToDisplay]=useState("none")
-
+let [BtnDisable,setBtnDisable]=useState(true)
 
 
  
@@ -147,6 +147,8 @@ if(!inputState.fname && !inputState.state){
   dispatch(setTestSliceData(inputState))
 
   setisReadyToDisplay("")
+  setBtnDisable(false)
+
 }
 
 let reset=()=>{
@@ -165,7 +167,7 @@ let[BloaderDiv,setBloaderDiv]=useState("transparent")
 let[CloaderDiv,setCloaderDiv]=useState("transparent")
 
 
-let [DisabledTrue,setDisabledTrue]=useState("false")
+ 
 
 
 let Goto=(val)=>{
@@ -180,7 +182,8 @@ setBloaderDiv("")
 setAloaderDiv("")
 setCButtonStyle(" ")
 setCloaderDiv("transparent")
-setDisabledTrue("false")
+
+ 
 }
 else if(val==2){
 setCButtonStyle("green")
@@ -189,6 +192,7 @@ setBButtonStyle("green")
 setBloaderDiv("")
 setAButtonStyle("green")
 setAloaderDiv("")
+  
 }
 else if (val==0){
 setAButtonStyle("green")
@@ -199,6 +203,8 @@ setBloaderDiv("transparent")
 
 setCButtonStyle("")
 setCloaderDiv("transparent")
+
+ 
 } 
 
 }
@@ -210,8 +216,8 @@ setCloaderDiv("transparent")
 <Container style={{marginBottom:"0%"}}>
   <Row style={{marginTop:"50px", padding:"0px"}}>
     <Col><Button onClick={()=>{Goto(0)}} variant="outline-secondary" style={{backgroundColor:"", borderColor:AbuttonStyle}}>Personal Details</Button></Col>
-    <Col><Button onClick={()=>{Goto(1)}} variant="outline-secondary" style={{backgroundColor:"", borderColor:BbuttonStyle}}>Address</Button></Col>
-    <Col><Button onClick={()=>{Goto(2)}} variant="outline-secondary" style={{backgroundColor:"", borderColor:CbuttonStyle}}>Submit</Button></Col>
+    <Col><Button onClick={()=>{Goto(1)}} variant="outline-secondary" style={{backgroundColor:"", borderColor:BbuttonStyle}}  disabled={BtnDisable} >Address</Button></Col>
+    <Col><Button onClick={()=>{Goto(2)}} variant="outline-secondary" style={{backgroundColor:"", borderColor:CbuttonStyle}}  disabled={BtnDisable}>Submit</Button></Col>
   </Row>
   <Row>
 <Col><div className="Step2Step" style={{backgroundColor:AloaderDiv}}> </div></Col>
@@ -231,7 +237,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="fname">
     <Form.Label>Firstname</Form.Label>
-    <Form.Control type="text" placeholder={selector.fname ==null ? "Enter Firstname " : selector.fname} onChange={handleChange_1}   name="fname"  />
+    <Form.Control type="text" className="FormTextBox" placeholder={selector.fname ==null ? "Enter Firstname " : selector.fname} onChange={handleChange_1}   name="fname"    />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.fname.length>0 && ( <span>{inputState.isError.fname}</span>)}
@@ -239,7 +245,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="lname">
     <Form.Label>Lastname</Form.Label>
-    <Form.Control type="text" placeholder={selector.lname ==null ? "Enter Lastname " : selector.lname}  onChange={handleChange_1}   name="lname" />
+    <Form.Control type="text" className="FormTextBox" placeholder={selector.lname ==null ? "Enter Lastname " : selector.lname}  onChange={handleChange_1}   name="lname" />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.lname.length>0 && ( <span>{inputState.isError.lname}</span>)}
@@ -247,7 +253,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="email">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder={selector.email ==null ? "Enter Email " : selector.email} onChange={handleChange_1}  name="email" />
+    <Form.Control type="email" className="FormTextBox" placeholder={selector.email ==null ? "Enter Email " : selector.email} onChange={handleChange_1}  name="email" />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.email.length>0 && ( <span>{inputState.isError.email}</span>)}
@@ -255,7 +261,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="phone">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" placeholder={selector.phone ==null ? "Enter Phone " : selector.phone} onChange={handleChange_1}   name="phone" />
+    <Form.Control type="text" className="FormTextBox" placeholder={selector.phone ==null ? "Enter Phone " : selector.phone} onChange={handleChange_1}   name="phone" />
  
   </Form.Group>
   <p className="errorFontSize">
@@ -264,7 +270,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="pass">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder={selector.pass ==null ? "Enter Password " : selector.pass}  onChange={handleChange_1}   name="pass" />
+    <Form.Control type="password" className="FormTextBox" placeholder={selector.pass ==null ? "Enter Password " : selector.pass}  onChange={handleChange_1}   name="pass" />
   
   </Form.Group>
   <p className="errorFontSize">
@@ -279,10 +285,10 @@ setCloaderDiv("transparent")
 </Form> 
 
  
-<Button className="BtnNext" variant="outline-dark" type="click" onClick={()=>{Goto(1)}}     >
+<Button className="BtnNext" variant="outline-dark" type="click" onClick={()=>{Goto(1)}}   disabled={BtnDisable}  >
     Next
   </Button>
-  <Button className="BtnHome" variant="outline-light" type="click" onClick={()=>{history.push('/')}}>
+  <Button className="BtnHome" variant="outline-dark" type="click" onClick={()=>{history.push('/')}}>
     Go Back To Home
   </Button>  
             </Row>
@@ -308,7 +314,7 @@ setCloaderDiv("transparent")
 <Form.Group className="mb-3" controlId="state">
 <Form.Label>State</Form.Label>
  
-<Form.Control type="text" placeholder={selector.state ==null ? "Enter State " : selector.state} name="state" onChange={handleChange_2} />
+<Form.Control type="text" className="FormTextBox" placeholder={selector.state ==null ? "Enter State " : selector.state} name="state" onChange={handleChange_2} />
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.state.length>0 && ( <span>{inputState.isError.state}</span>)}
@@ -317,7 +323,7 @@ setCloaderDiv("transparent")
 <Form.Group className="mb-3" controlId="city">
 <Form.Label>City</Form.Label>
  
-<Form.Control type="text" placeholder={selector.city ==null ? "Enter City " : selector.city} name="city" onChange={handleChange_2} />
+<Form.Control type="text" className="FormTextBox" placeholder={selector.city ==null ? "Enter City " : selector.city} name="city" onChange={handleChange_2} />
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.city.length>0 && ( <span>{inputState.isError.city}</span>)}
@@ -326,7 +332,7 @@ setCloaderDiv("transparent")
 
 <Form.Group className="mb-3" controlId="zip">
 <Form.Label>Zipcode</Form.Label>
-<Form.Control type="text" placeholder={selector.zip ==null ? "Enter Zipcode " : selector.zip}  name="zip"  onChange={handleChange_2}/>
+<Form.Control type="text" className="FormTextBox" placeholder={selector.zip ==null ? "Enter Zipcode " : selector.zip}  name="zip"  onChange={handleChange_2}/>
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.zip.length>0 && ( <span>{inputState.isError.zip}</span>)}
@@ -342,10 +348,10 @@ Submit
 <Button className="BtnNext" variant="outline-dark" type="click" onClick={()=>{Goto(0)}} >
     Back
   </Button>
-  <Button className="BtnNext" variant="outline-dark" type="click" onClick={()=>{Goto(2)}} >
+  <Button className="BtnNext" variant="outline-dark" type="click"  onClick={()=>{Goto(2)}}  >
     Next
   </Button>
-  <Button className="BtnHome" variant="outline-light" type="click" onClick={()=>{history.push('/')}}  >
+  <Button className="BtnHome" variant="outline-dark" type="click" onClick={()=>{history.push('/')}}  >
 Go Back To Home
 </Button>  
 </Row>
@@ -393,12 +399,12 @@ Go Back To Home
 <Button className="BtnNext" variant="outline-dark" type="click" onClick={()=>{Goto(1)}} style={{marginTop: "0px" , width:"80px" }}>
     Back
   </Button>
-<Button className="BtnHome" variant="outline-light" type="click" onClick={()=>{history.push('/')}} style={{ width:"80px" }}>
+<Button className="BtnHome" variant="outline-dark" type="click" onClick={()=>{history.push('/')}} style={{ width:"70px" }}>
  Home
 </Button> 
 <Button variant="outline-success" onClick={()=>alert("Data Saved"+ selector.fname)}> Submit</Button>
 
-  <p>   <Button variant="outline-danger"    style={{marginLeft:"20px" ,width:"80px" }}> Reset</Button></p> 
+  <p>   <Button variant="outline-danger"  onClick={()=>reset()}  style={{marginLeft:"20px" ,width:"80px" }}> Reset</Button></p> 
 </span>
 
 </Container>

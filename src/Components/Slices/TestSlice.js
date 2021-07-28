@@ -34,7 +34,16 @@ const TestSlice = createSlice({
         },
         setReset:(state,action)=>{
                     if (action.payload="reset")
-                    state=initialState
+                    state.fname=""
+                    state.lname=""
+                    state.email=""
+                    state.pass=""
+                    state.phone=""
+                    state.zip=""
+                    state.state=""
+                    state.city=""
+                    state.formCounter=""
+
         }
     
     
