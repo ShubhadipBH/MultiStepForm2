@@ -237,7 +237,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="fname">
     <Form.Label>Firstname</Form.Label>
-    <Form.Control type="text" className="FormTextBox" placeholder={selector.fname ==null ? "Enter Firstname " : selector.fname} onChange={handleChange_1}   name="fname"    />
+    <Form.Control type="text" className="FormTextBox" placeholder=  "Enter Firstname "  onChange={handleChange_1}   name="fname"    value={inputState.fname}  />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.fname.length>0 && ( <span>{inputState.isError.fname}</span>)}
@@ -245,7 +245,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="lname">
     <Form.Label>Lastname</Form.Label>
-    <Form.Control type="text" className="FormTextBox" placeholder={selector.lname ==null ? "Enter Lastname " : selector.lname}  onChange={handleChange_1}   name="lname" />
+    <Form.Control type="text" className="FormTextBox" placeholder="Enter Lastname " onChange={handleChange_1}   name="lname"   value={inputState.lname} />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.lname.length>0 && ( <span>{inputState.isError.lname}</span>)}
@@ -253,7 +253,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="email">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" className="FormTextBox" placeholder={selector.email ==null ? "Enter Email " : selector.email} onChange={handleChange_1}  name="email" />
+    <Form.Control type="email" className="FormTextBox" placeholder="Enter Email" onChange={handleChange_1}  name="email" value={inputState.email} />
   </Form.Group>
   <p className="errorFontSize">
   {inputState.isError.email.length>0 && ( <span>{inputState.isError.email}</span>)}
@@ -261,7 +261,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="phone">
     <Form.Label>Phone</Form.Label>
-    <Form.Control type="text" className="FormTextBox" placeholder={selector.phone ==null ? "Enter Phone " : selector.phone} onChange={handleChange_1}   name="phone" />
+    <Form.Control type="text" className="FormTextBox" placeholder= "Enter Phone "   onChange={handleChange_1}   name="phone"  value={inputState.phone} />
  
   </Form.Group>
   <p className="errorFontSize">
@@ -270,7 +270,7 @@ setCloaderDiv("transparent")
 
   <Form.Group className="mb-3" controlId="pass">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" className="FormTextBox" placeholder={selector.pass ==null ? "Enter Password " : selector.pass}  onChange={handleChange_1}   name="pass" />
+    <Form.Control type="password" className="FormTextBox" placeholder= "Enter Password "   onChange={handleChange_1}   name="pass"  value={inputState.pass} />
   
   </Form.Group>
   <p className="errorFontSize">
@@ -294,8 +294,6 @@ setCloaderDiv("transparent")
             </Row>
 
             </Container>
- 
-
             
   : 
 <>
@@ -314,7 +312,7 @@ setCloaderDiv("transparent")
 <Form.Group className="mb-3" controlId="state">
 <Form.Label>State</Form.Label>
  
-<Form.Control type="text" className="FormTextBox" placeholder={selector.state ==null ? "Enter State " : selector.state} name="state" onChange={handleChange_2} />
+<Form.Control type="text" className="FormTextBox" placeholder="Enter State "  name="state" onChange={handleChange_2}  value={inputState.state} />
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.state.length>0 && ( <span>{inputState.isError.state}</span>)}
@@ -323,7 +321,7 @@ setCloaderDiv("transparent")
 <Form.Group className="mb-3" controlId="city">
 <Form.Label>City</Form.Label>
  
-<Form.Control type="text" className="FormTextBox" placeholder={selector.city ==null ? "Enter City " : selector.city} name="city" onChange={handleChange_2} />
+<Form.Control type="text" className="FormTextBox" placeholder= "Enter City "   name="city" onChange={handleChange_2}  value={inputState.city} />
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.city.length>0 && ( <span>{inputState.isError.city}</span>)}
@@ -332,7 +330,7 @@ setCloaderDiv("transparent")
 
 <Form.Group className="mb-3" controlId="zip">
 <Form.Label>Zipcode</Form.Label>
-<Form.Control type="text" className="FormTextBox" placeholder={selector.zip ==null ? "Enter Zipcode " : selector.zip}  name="zip"  onChange={handleChange_2}/>
+<Form.Control type="text" className="FormTextBox" placeholder= "Enter Zipcode "   name="zip"  onChange={handleChange_2} value={inputState.zip}/>
 </Form.Group>
 <p className="errorFontSize">
 {inputState.isError.zip.length>0 && ( <span>{inputState.isError.zip}</span>)}
