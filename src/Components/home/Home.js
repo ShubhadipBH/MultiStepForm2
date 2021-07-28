@@ -10,8 +10,9 @@ import {Link} from 'react-router-dom'
 import { useFormik } from 'formik'
 
 import { setUserData } from '../Slices/RegSlice'
-import { useSelector} from 'react-redux'
-
+ 
+import {setTestSliceData,setReset} from '../Slices/TestSlice'
+import { useDispatch ,useSelector} from 'react-redux'
 
 export default function Home() {
 
@@ -21,7 +22,7 @@ export default function Home() {
         
 const history=useHistory();
 
-const selector=useSelector(state=>state.userdata)
+const selector=useSelector(state=>state.TestReducer)
  
 
 const redirectToReg=()=>{
@@ -59,7 +60,8 @@ const validateSubmit=(ContactData)=>{
 }
 
 
-
+console.log(selector.email);
+console.log(selector.pass);
 
 const formik=useFormik({
     initialValues:{
@@ -70,8 +72,13 @@ const formik=useFormik({
     validate:validateSubmit,
     onSubmit:(values)=>{
             console.log(values);
- 
-
+        if(selector.email===values.email && selector.pass===values.pass)
+{
+    history.push(`/RegForm1`)
+}
+else{
+    alert("Invalid Email or Password")
+}
 
     }
 
