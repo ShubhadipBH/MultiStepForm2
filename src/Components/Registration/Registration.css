@@ -13,21 +13,32 @@ html,body{
 }
 .BtnSubmit{
     width: inherit !important;
+    background-color: #198754 !important;
+    color:white
 }
 .BtnNext{
     padding: 7px 10px;
-    width: 636px; 
+    width: 632px; 
     margin-top: 10px;
     margin-left: 12px;
 
 }
 .BtnHome{
     padding: 7px 10px;
-    width: 636px; 
+    width: 632px; 
     margin: 10px 12px;       
+    background-color: #212529;
+    color:white
 }
 
-
+.BtnHome:hover{
+    background-color: transparent !important;
+    color: #212529;
+}
+.BtnSubmit:hover{
+    background-color: transparent !important;
+    color:#198754
+}
 
 .Registration_Container{
     
