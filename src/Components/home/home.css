@@ -1,0 +1,32 @@
+html{margin: 0%;}
+.Home_Row_col1{
+background-color: red;
+background-image: url('../../images/welcomePic.jpeg');
+ background-size: 100%;
+}
+ .Home_Row_col2{
+     padding: 13.7rem 10rem  ;
+     align-items: center;
+         
+ }
+ .Home_Row_col2_Container{
+     padding :0rem 15rem !important;
+
+     padding :10px 2rem !important;
+     background: rgba( 255, 255, 255, 0.25 );
+     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+     backdrop-filter: blur( 11.0px );
+     border-radius: 16px;
+     width: 60%;
+ }
+ .Home_Row_col2_Container_Form_ButtonSubmit{
+     padding:10px 30px!important;
+ }
+ .Home_Row_col2_Container_span{
+  font-size: 15px;
+ }
+ .Home_Row{
+  margin-right: 0% !important;
+ 
+ }
+ 
