@@ -146,7 +146,7 @@ if(!inputState.fname && !inputState.state){
 
   // dispatch(setTestSliceData(inputState))
 
-  setisReadyToDisplay("")
+
   setBtnDisable(false)
 
 }
@@ -155,6 +155,7 @@ if(!inputState.fname && !inputState.state){
 let finalSubmit=()=>{
 
   dispatch(setTestSliceData(inputState))
+  setisReadyToDisplay("")
   // console.log(selector);
   alert("Data Saved. Thank you !" + inputState.fname)
 }
@@ -379,8 +380,9 @@ Go Back To Home
  <Container className="Registration_Container">   
  <div className="Registration_Container_ShowDetails">
 
+ <Button variant="outline-success" onClick={()=>finalSubmit()}> Submit</Button>
 
-  <span style={{display:isReadyToDisplay}}>Details Taken</span>
+ <p/> <span style={{display:isReadyToDisplay}}>Details Taken</span>
 
 {/* <p>   <Button variant="outline-primary" onClick={()=>alert("Data Saved"+ selector.fname)}> Submit</Button>
       <Button variant="outline-primary" onClick={()=>{Goto(0)}} style={{marginLeft:"20px"}}> Reset</Button>
@@ -408,7 +410,7 @@ Go Back To Home
 <Button className="BtnHome" variant="outline-dark" type="click" onClick={()=>{history.push('/')}} style={{ width:"70px" }}>
  Home
 </Button> 
-<Button variant="outline-success" onClick={()=>finalSubmit()}> Submit</Button>
+
 
   <p>   <Button variant="outline-danger"  onClick={()=>reset()}  style={{marginLeft:"20px" ,width:"80px" }}> Reset</Button></p> 
 </span>

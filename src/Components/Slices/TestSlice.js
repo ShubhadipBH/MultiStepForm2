@@ -4,15 +4,15 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     fname:null,
     lname:null,
-     email:null,
+    email:null,
     pass:null,
     phone:null,
     state:null,
     city:null,
     zip:null,
-     message:null,
-     error:null,
-     formCounter:null
+    message:null,
+    error:null,
+    formCounter:null
   
 }
 
@@ -52,3 +52,7 @@ const TestSlice = createSlice({
 
 export const {setTestSliceData,setReset} = TestSlice.actions
 export default TestSlice.reducer
+
+
+
+//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 - GITLAB TOKEN
